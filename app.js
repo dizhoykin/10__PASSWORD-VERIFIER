@@ -14,12 +14,13 @@ for (let i = 0; i < inputs.length; i++) {
 
 document.addEventListener('paste', (evt) => {
   if (evt.target.type === 'text') {
-    let data = evt.clipboardData.getData('Text');
+    let data = evt.clipboardData.getData('text');
     code = data;
     data = data.split('');
-    [].forEach.call(document.querySelectorAll('input'), (node, index) => {
-        node.value = data[index];
+    inputs.forEach((input, index) => {
+      input.value = data[index];
     });
+
   }
 });
 
@@ -30,6 +31,5 @@ verificationButton.addEventListener('click', () => {
   }
   else {
     alert('Code denied!');
-    alert(code);
   }
 });
