@@ -4,7 +4,6 @@ let code = [];
 
 for (let i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener('input', () => {
-    inputs[i].blur();
     if (inputs[i] != inputs[inputs.length - 1]) {
       inputs[i+1].focus();
     };
